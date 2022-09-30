@@ -1,5 +1,4 @@
 use ndarray::prelude::*;
-use std::{io, result};
 
 fn main(){
 
@@ -111,12 +110,4 @@ fn gradient_descent(x: &Array2<f64>, y: &Array1<f64>, w_in: Array1<f64>, b_in: f
     }
 
     return (b,w);
-}
-
-fn reader() {
-    let mut rdr = csv::Reader::from_reader(io::stdin());
-    for result in rdr.records(){
-        let record = result.expect("a csv record");
-        println!("{:?}", record);
-    }
 }
